@@ -20,3 +20,37 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+ltp/.project
+ltp/.classpath
+ltp/.settings/org.eclipse.ltk.core.refactoring.prefs
+*.prefs
+*.dll
+*.exe
+*.model
+*.txt
+*.xml
+*.lib
+*.exp
+ltp/src/test/Prefix.java
+ltp/src/test/TestNer.java
+ltp/src/test/TestParser.java
+ltp/src/test/TestPostag.java
+ltp/src/test/TestPostag.java
+ltp/src/test/TestSegment.java
+ltp/src/test/TestSrl.java
+ltp/src/test/ExcludeStopWords.java
+ltp/src/ICTCLAS/I3S/AC/Spliter.java
+ltp/src/ICTCLAS/I3S/AC/Participle.java
+ltp/src/ICTCLAS/I3S/AC/ICTCLAS50.java
+ltp/ltp_data/version
+ltp/ltp_data/srl/srl.cfg
+ltp/ltp_data/changelog
+ltpGit/src/test/TestSrl.java
+ltpGit/src/test/TestSegment.java
+ltpGit/src/test/TestPostag.java
+ltpGit/src/test/TestParser.java
+ltpGit/src/test/TestNer.java
+ltpGit/src/test/Prefix.java
+ltpGit/src/test/ExcludeStopWords.java
+ltpGit/src/shlip/SegFiles.java
+ltpGit/src/shlip/ExcludeStopWords.java

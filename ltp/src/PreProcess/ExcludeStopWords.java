@@ -1,4 +1,4 @@
-package shlip;
+package PreProcess;
 
 /*
  public static void refineNoun() throws IOException{  
@@ -70,12 +70,15 @@ package shlip;
  */
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -93,8 +96,9 @@ public class ExcludeStopWords {
         }  
         System.out.println("Stop words set over!");  
         BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(srcFile),"UTF-8")); 
-        File outFile = new File(desFile);  
-        FileWriter fw = new FileWriter(outFile,true);                  
+        //File outFile = new File(desFile);  
+        //FileWriter fw = new FileWriter(outFile,true);      
+        BufferedWriter outWriter=new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(desFile)), "UTF-8"));
         String tmp = null;  
         try {  
            while((tmp = reader.readLine()) !=null)
@@ -112,8 +116,10 @@ public class ExcludeStopWords {
                 	if(!setor.contains(str[k]))
                     {  
                 		System.out.println(str[k]+" 不是停用词，已加入文件");
-                        fw.write(str[k]+" ");  
-                        fw.flush();  
+                        //fw.write(str[k]+" ");  
+                        //fw.flush();  
+                        outWriter.append(str[k]+" ");
+                        outWriter.flush();
                     }
                     else
                     {  
@@ -122,7 +128,8 @@ public class ExcludeStopWords {
                     	//多加了一次
                     }
                   } 
-                fw.write("\n");
+                //fw.write("\n");
+                outWriter.append("\n");
                 }      
     
         }
@@ -130,7 +137,8 @@ public class ExcludeStopWords {
         {  
             e.printStackTrace();  
         }  
-        fw.close();               
+        //fw.close();
+        outWriter.close();
     }  
     
     public static void main(String[] args) throws IOException
@@ -146,5 +154,6 @@ public class ExcludeStopWords {
 			System.out.println("正在处理文件"+i+".txt");
 			ExcludeStopWords.refineNoun(srcPath+i+".txt",desPath+i+".txt");
 		}
+		System.out.println("处理结束");
     }
 }
